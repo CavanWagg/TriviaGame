@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Trivia</title>
-  <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.js"
-  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-  crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
 </head>
 <div id="title">
 
-<h1>Javascript trivia game</h1>
+    <h1>Javascript trivia game</h1>
+    <div class="display hidden">
+        <h1 class="display__time-left"></h1>
+        <p class="display__end-time"></p>
+    </div>
 
+    <button data-time="240" id="start">Begin Quiz</button>
+    <div id="quiz-section"></div>
 
-<button id="start">Begin Quiz</button>
 
 
 </div>
 
 <div id="quiz">
-  <p id="timer">5:00</p>
-
-  <div class="Questions">
-
-    1. What is the correct JavaScript syntax to change the content of the HTML element below?
 
 
-    <p class="question">This is a demonstration.</p>
-    
-     document.getElementById("demo").innerHTML = "Hello World!";
-     document.getElementByName("p").innerHTML = "Hello World!";
-     document.getElement("p").innerHTML = "Hello World!";
-     #demo.innerHTML = "Hello World!";
+    <div class="Questions">
+
+        1. What is the correct JavaScript syntax to change the content of the HTML element below?
+
+
+        <p class="question">This is a demonstration.</p>
+
+        document.getElementById("demo").innerHTML = "Hello World!"; document.getElementByName("p").innerHTML = "Hello World!"; document.getElement("p").innerHTML = "Hello World!"; #demo.innerHTML = "Hello World!";
 
 
 
-     
+
 
     </div>
 
 
-    <button id="submit"></button>
+    <button class="button" id="submit">submit</button>
 
 
 
@@ -53,9 +54,10 @@
 
 
 </div>
-
+<script src="assets/javascript/app.js"></script>
 
 <body>
-  
+
 </body>
+
 </html>
