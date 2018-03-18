@@ -1,27 +1,145 @@
 // const titleScreen = document.getElementById('title');
 // const startButton = document.getElementById('start');
-// const quizPage = document.getElementById('quiz');
-// const results = document.getElementById('results');
-// const submitButton = document.getElementById('submit');
+//&gt for >
+//&lt for <
+
+
+const quizContainer = document.getElementById("quiz");
+const resultsContainer = document.getElementById("results");
+const submitButton = document.getElementById("submit");
+const quizQuestions = [
+  {
+    
+    question: "1. What is the correct JavaScript syntax to change the content of the HTML element below? <br> <code> &ltp&gt id='demo'>This is a demonstration. &lt/p&gt</code>",
+    answers: {
+      a: 'document.getElementById("demo").innerHTML = "Hello World!"',  
+      b: 'document.getElementByName("p").innerHTML = "Hello World!"',
+      c: '#demo.innerHTML = "Hello World!"',
+      d: 'document.getElement("p").innerHTML = "Hello World!"'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    answers: {
+      a: 'function = myFunction()', 
+      b: 'function::myFunction()',
+      c: 'function myFunction()',
+      d: 'function:myFunction()'
+    },
+    correctAnswer: 'c'
+  },
+  {
+    question: "Number('2') - 2 == 0; <br> What is the result?",
+    answers: {
+      a: 'True',
+      b: 'False',
+      c: 'TypeError',
+      d: 'NaN'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: "'5' - - '3'; <br> What is the result?",
+    answers: {
+      a: '0',
+      b: '8',
+      c: '53',
+      d: "'53'"
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: "new String ('I am a string') instanceof String; <br> What is the result?",
+    answers: {
+      a: 'true',
+      b: 'false',
+      c: 'typeError',
+      d: "'I am a string'"
+    },
+    correctAnswer: 'a'
+  },
+];
+  
+  function buildQuiz() {
+    const htmlContent = [];
+    //for each question...
+    quizQuestions.forEach(
+      (currentQuestion, questionNumber) => {
+        // Store the list of answer choices
+        const answers = [];
+        // for each available answer...
+        for(letter in currentQuestion.answers) {
+          //add an HTML radio button
+          answers.push(
+            `<label> <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+        // add this question and its answers to the output
+        htmlContent.push(
+          `<div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+        );
+
+      });
+      quizContainer.innerHTML = htmlContent.join('');
+      document.getElementById("submit").style.visibility = "visible";
+  }
+  function renderResults() {
+    //gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+    //Track user's answers
+    let numberCorrect = 0;
+    //for each question..
+    quizQuestions.forEach((currentQuestion, questionNumber) => {
+
+      //find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      console.log(selector);
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    //if the answer if correct
+    if(userAnswer == currentQuestion.correctAnswer){
+      //add to the number of correct answers
+      numberCorrect++;
+      
+
+      //color the answers green
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    }
+    //if the answer is wrong or blank
+    else{
+      answerContainers[questionNumber].style.color = 'red';
+      console.log(userAnswer);
+      console.log(currentQuestion.correctAnswer);
+    }
+    });
+
+    //show number of correct answers 
+    resultsContainer.innerHTML = `${numberCorrect} out of ${quizQuestions.length} <br> The correct answers are a,c,a,b,a`;
+  };
+
+
+
+
+  
+
 
 
 //on click, generate quiz page
 $('#start').click(function(){
+  $(buildQuiz());
   $(this).remove();
-  //render quiz page function
-  renderQuiz(questions, "#quiz-section");
 })
-
-//quiz questions array/object
-
-//quiz content
-var renderQuiz = function(question, renderArea) {
-var quizDiv = $("<div class='quiz'");
-var quizQuestion = $("<div class='quiz-question'>");
-quizDiv.append(quizQuestion);
-$(renderArea).append(quizDiv);
-  
-}
+// submit button, go to results page
+submitButton.addEventListener("click", renderResults);
+$('#submit').click(function() {
+  console.log('howdy');
+})
 
 //timer 
 let countdown;
@@ -42,6 +160,7 @@ function timer(seconds) {
     //display it
     displayTimeLeft(secondsLeft);
   }, 1000);
+  
 }
 
 
@@ -60,34 +179,8 @@ function startTimer() {
   timer(seconds);
 }
 
-buttons.forEach(button => button.addEventListener('click', startTimer))
+buttons.forEach(button => button.addEventListener('click', startTimer));
 
 
 
-
-//title screen
-
-
-
-//start timer
-
-
-
-// function timer(){
-//   console.log('running timer')
-//   renderResults();
-// };
-// setTimeout(timer(), 2000);
-
-//end timer: times up, run answer check, go to results page
-
-//create text with bubbles you can click
-
-// submit button, run answer check, go to results page
-// $('#submit').click(renderResults());
-// clearTimeout(timer);;
-
-//create a function that checks for correct/incorrect answers
-
-//Results page: display results, reset buttom to try again
 
