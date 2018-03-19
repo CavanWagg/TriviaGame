@@ -106,7 +106,6 @@ const quizQuestions = [
     if(userAnswer == currentQuestion.correctAnswer){
       //add to the number of correct answers
       numberCorrect++;
-      
 
       //color the answers green
       answerContainers[questionNumber].style.color = 'lightgreen';
@@ -138,7 +137,9 @@ $('#start').click(function(){
 // submit button, go to results page
 submitButton.addEventListener("click", renderResults);
 $('#submit').click(function() {
-  console.log('howdy');
+  clearInterval(countdown);
+  $(this).hide();
+
 })
 
 //timer 
@@ -155,6 +156,9 @@ function timer(seconds) {
     //check if we should stop it
     if(secondsLeft < 0) {
       clearInterval(countdown);
+      renderResults();
+      $('#submit').hide();
+      $('.display__time-left').append(`<br>Time's Up!`)
       return;
     }
     //display it
