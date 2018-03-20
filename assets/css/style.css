@@ -2,19 +2,22 @@
 /* Element that depends upon the block */
 /* Modifier that changes the style of the block */
 #override body {
-  background-color: #8BC34A;
+  background-color: #7FDFD4;
 }
 #title {
-  background-color: #DCEDC8;
+  background-color: #A7EFE9;
 }
-#override h1 .jumbotron {
+#override .jumbotron {
   color: #212121;
-  background-color: #DCEDC8;
+  border-bottom: solid #FBAC91;
+  background-color: #7FDFD4;
 }
 #submit,
 #start {
-  background-color: #689F38;
+  background-color: #FBE1B6;
   margin-top: 20px;
+  border: solid 1px #FBAC91;
+  color: #212121;
 }
 label {
   padding: 0px 10px;
@@ -24,4 +27,7 @@ label {
 }
 .question {
   padding: 10px 10px;
+}
+#override code {
+  color: #2317b8;
 }

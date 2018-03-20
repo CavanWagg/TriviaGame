@@ -18,33 +18,33 @@
 //     }
 //   }
 // }
-@darkPrimaryColor:   #689F38;
-@primaryColor:       #8BC34A;
-@lightPrimaryColor:  #DCEDC8;
+@darkPrimaryColor:   #7FDFD4;
+@primaryColor:       #A7EFE9;
 @textPrimaryColor:   #212121;
-@accentColor:        #8BC34A;
-@primaryTextColor:   #212121;
 @secondaryTextColor: #757575;
-@dividerColor:       #BDBDBD;
+@secondaryColor: #FBE1B6;
+@darkSecondaryColor: #FBAC91;
 
-html{
-}
+
 #override body {
-  background-color: @primaryColor;
+  background-color: @darkPrimaryColor;
   
 }
 #title {
-  background-color: @lightPrimaryColor;
+  background-color: @primaryColor;
 }
 
-#override h1 .jumbotron {
-  color: @primaryTextColor;
-  background-color: @lightPrimaryColor;
+#override .jumbotron {
+  color: @textPrimaryColor;
+  border-bottom: solid @darkSecondaryColor;
+  background-color: @darkPrimaryColor;
 }
 #submit,
 #start {
-  background-color: @darkPrimaryColor;
+  background-color: @secondaryColor;
   margin-top: 20px;
+  border: solid 1px @darkSecondaryColor;
+  color: @textPrimaryColor;
 }
 // #start {
 //   margin: 100px 0px;
@@ -59,4 +59,7 @@ label {
 }
 .question {
   padding: 10px 10px;
+}
+#override code {
+  color: #2317b8
 }

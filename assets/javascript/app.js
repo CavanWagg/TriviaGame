@@ -30,7 +30,7 @@ const quizQuestions = [
     correctAnswer: 'c'
   },
   {
-    question: "3. Number('2') - 2 == 0; <br> What is the result?",
+    question: "3. <code> Number('2') - 2 == 0; </code> <br> What is the result?",
     answers: {
       a: 'True',
       b: 'False',
@@ -40,7 +40,7 @@ const quizQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "4. '5' - - '3'; <br> What is the result?",
+    question: "4. <code> '5' - - '3'; </code> <br> What is the result?",
     answers: {
       a: '0',
       b: '8',
@@ -50,7 +50,7 @@ const quizQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: "5. new String ('This is a string') instanceof String; <br> What is the result?",
+    question: "5. <code> new String ('This is a string') instanceof String; </code> <br> What is the result?",
     answers: {
       a: 'true',
       b: 'false',
@@ -110,11 +110,11 @@ const quizQuestions = [
       numberCorrect++;
 
       //color the answers green
-      answerContainers[questionNumber].style.color = 'lightgreen';
+      answerContainers[questionNumber].style.color = 'green';
     }
     //if the answer is wrong or blank
     else{
-      answerContainers[questionNumber].style.color = 'red';
+      answerContainers[questionNumber].style.color = '#bd2130';
       console.log(userAnswer);
       console.log(currentQuestion.correctAnswer);
     }
