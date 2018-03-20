@@ -1,0 +1,27 @@
+/* Block component */
+/* Element that depends upon the block */
+/* Modifier that changes the style of the block */
+#override body {
+  background-color: #8BC34A;
+}
+#title {
+  background-color: #DCEDC8;
+}
+#override h1 .jumbotron {
+  color: #212121;
+  background-color: #DCEDC8;
+}
+#submit,
+#start {
+  background-color: #689F38;
+  margin-top: 20px;
+}
+label {
+  padding: 0px 10px;
+}
+.answers {
+  font-size: 12px;
+}
+.question {
+  padding: 10px 10px;
+}

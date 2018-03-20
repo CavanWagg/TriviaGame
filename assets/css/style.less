@@ -18,3 +18,45 @@
 //     }
 //   }
 // }
+@darkPrimaryColor:   #689F38;
+@primaryColor:       #8BC34A;
+@lightPrimaryColor:  #DCEDC8;
+@textPrimaryColor:   #212121;
+@accentColor:        #8BC34A;
+@primaryTextColor:   #212121;
+@secondaryTextColor: #757575;
+@dividerColor:       #BDBDBD;
+
+html{
+}
+#override body {
+  background-color: @primaryColor;
+  
+}
+#title {
+  background-color: @lightPrimaryColor;
+}
+
+#override h1 .jumbotron {
+  color: @primaryTextColor;
+  background-color: @lightPrimaryColor;
+}
+#submit,
+#start {
+  background-color: @darkPrimaryColor;
+  margin-top: 20px;
+}
+// #start {
+//   margin: 100px 0px;
+// }
+
+label {
+  padding: 0px 10px;
+
+}
+.answers {
+  font-size: 12px;
+}
+.question {
+  padding: 10px 10px;
+}

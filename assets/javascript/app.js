@@ -10,7 +10,7 @@ const submitButton = document.getElementById("submit");
 const quizQuestions = [
   {
     
-    question: "1. What is the correct JavaScript syntax to change the content of the HTML element below? <br> <code> &ltp&gt id='demo'>This is a demonstration. &lt/p&gt</code>",
+    question: "1. What is the correct JavaScript syntax to change the content of the HTML element below? <br> <code> &ltp&gt id='demo'>This is a demo. &lt/p&gt</code>",
     answers: {
       a: 'document.getElementById("demo").innerHTML = "Hello World!"',  
       b: 'document.getElementByName("p").innerHTML = "Hello World!"',
@@ -20,7 +20,7 @@ const quizQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "How do you create a function in JavaScript?",
+    question: "2. How do you create a function in JavaScript?",
     answers: {
       a: 'function = myFunction()', 
       b: 'function::myFunction()',
@@ -30,7 +30,7 @@ const quizQuestions = [
     correctAnswer: 'c'
   },
   {
-    question: "Number('2') - 2 == 0; <br> What is the result?",
+    question: "3. Number('2') - 2 == 0; <br> What is the result?",
     answers: {
       a: 'True',
       b: 'False',
@@ -40,7 +40,7 @@ const quizQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "'5' - - '3'; <br> What is the result?",
+    question: "4. '5' - - '3'; <br> What is the result?",
     answers: {
       a: '0',
       b: '8',
@@ -50,7 +50,7 @@ const quizQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: "new String ('I am a string') instanceof String; <br> What is the result?",
+    question: "5. new String ('This is a string') instanceof String; <br> What is the result?",
     answers: {
       a: 'true',
       b: 'false',
@@ -87,6 +87,8 @@ const quizQuestions = [
       });
       quizContainer.innerHTML = htmlContent.join('');
       document.getElementById("submit").style.visibility = "visible";
+      document.getElementById("meme").style.display = "none";
+
   }
   function renderResults() {
     //gather answer containers from our quiz

@@ -1,0 +1,6 @@
+/* Block component */
+/* Element that depends upon the block */
+/* Modifier that changes the style of the block */
+body {
+  background: #8BC34A;
+}
