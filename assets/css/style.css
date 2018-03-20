@@ -4,6 +4,9 @@
 #override body {
   background-color: #7FDFD4;
 }
+#override h1 {
+  font-size: 24px;
+}
 #title {
   background-color: #A7EFE9;
 }
